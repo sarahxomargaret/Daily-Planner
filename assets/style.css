@@ -5,6 +5,11 @@ body {
 
 /* header/text styles*/
 
+#currentDay.lead{
+  border-bottom: 5px solid black;
+}
+
+
   textarea {
     background: transparent;
     border: none;
