@@ -2,6 +2,28 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 $(function () {
+
+    // ID's with times //
+    let timeSlot = [
+      {id: '#hour-9', hour: 9},
+      {id: '#hour-10', hour: 10},
+      {id: '#hour-11', hour: 11},
+      {id: '#hour-12', hour: 12},
+      {id: '#hour-1', hour: 1},
+      {id: '#hour-2', hour: 2},
+      {id: '#hour-3', hour: 3},
+      {id: '#hour-4', hour: 4},
+      {id: '#hour-5', hour: 5},
+    ]
+
+    // Time/Date variables//
+
+    let currentDate = dayjs().format('dddd, MMMM D, YYYY');
+    let currentHour = dayjs().format('HH');
+    let currentDay = dayjs().format('dddd');
+    let currentMonth = dayjs().format('MMMM');
+    let currentYear = dayjs().$y;
+
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
     // local storage. HINT: What does `this` reference in the click listener
