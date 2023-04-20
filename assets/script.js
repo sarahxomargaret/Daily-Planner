@@ -26,10 +26,7 @@ $(function () {
     let todaysDate = dayjs().format("dddd, MMMM D, YYYY");
 
     $("#currentDay").text(`${todaysDate}`);
-
-    //local storage
-
-    
+   
     
     //color based on time
     $.each(timeSlot, function (key, value) {
@@ -62,7 +59,22 @@ $(function () {
         event: textField,
       };
 
-
+    // local storage
+    if (localStorage.getItem("daily-planner") !== null) {
+      retrieveUserEntry = JSON.parse(localStorage.getItem("day-planner-events"));
+  
+      localStorage.setItem(
+        "daily-planner",
+        JSON.stringify(retrieveUserEntry)
+      );
+  
+      $.each(retrieveUserEntry, function (value) {
+        if (value.day === todaysDate) {
+          let entryHourId = `#${value.hour}`;
+          $(entryHourId).find("textarea").text(value.event);
+        }
+      });
+    }
     //saved message and timeout
     let savedMessage = $('#savedMessage');
     savedMessage.css('color', 'purple');
