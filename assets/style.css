@@ -9,6 +9,10 @@ body {
   border-bottom: 5px solid black;
 }
 
+.saved{
+  color: black;
+  padding-bottom: 1rem;
+}
 
   textarea {
     background: transparent;
