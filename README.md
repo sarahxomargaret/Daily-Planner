@@ -8,6 +8,8 @@ An interactive daily calender for a typical workday from 9AM - 5 PM. Block color
 
 ![dailyplanner](https://user-images.githubusercontent.com/127162545/233515694-55bb200f-3b1a-431e-8c1a-b56d0b07bfb7.JPG)
 
+https://github.com/sarahxomargaret/Daily-Planner
+
 ## License
 
 MIT License
