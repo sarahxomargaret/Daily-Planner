@@ -58,7 +58,7 @@ $(function () {
 
     // local storage
     if (localStorage.getItem("daily-planner") !== null) {
-      retrieveUserEntry = JSON.parse(localStorage.getItem("day-planner-events"));
+      retrieveUserEntry = JSON.parse(localStorage.getItem("daily-planner"));
   
       localStorage.setItem(
         "daily-planner",
