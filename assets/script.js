@@ -1,6 +1,3 @@
-// Wrap all code that interacts with the DOM in a call to jQuery to ensure that
-// the code isn't run until the browser has finished rendering all the elements
-// in the html.
 $(function () {
 
     // ID's with times 
@@ -18,11 +15,11 @@ $(function () {
 
     // Time/Date variables
 
-    let currentDate = dayjs().format('dddd, MMMM D, YYYY');
+    // let currentDate = dayjs().format('dddd, MMMM D, YYYY');
     let currentHour = dayjs().format('HH');
-    let currentDayName = dayjs().format('dddd');
-    let currentMonth = dayjs().format('MMMM');
-    let currentYear = dayjs().$y;
+    // let currentDayName = dayjs().format('dddd');
+    // let currentMonth = dayjs().format('MMMM');
+    // let currentYear = dayjs().$y;
     let todaysDate = dayjs().format("dddd, MMMM D, YYYY");
 
     $("#currentDay").text(`${todaysDate}`);
@@ -57,7 +54,7 @@ $(function () {
         day: todaysDate,
         hour: parentEl,
         event: textField,
-      };
+      }
 
     // local storage
     if (localStorage.getItem("daily-planner") !== null) {
@@ -68,10 +65,10 @@ $(function () {
         JSON.stringify(retrieveUserEntry)
       );
   
-      $.each(retrieveUserEntry, function (value) {
+      $.each(UserEntry, function (value) {
         if (value.day === todaysDate) {
-          let entryHourId = `#${value.hour}`;
-          $(entryHourId).find("textarea").text(value.event);
+          let hourId = `#${value.hour}`;
+          $(hourId).find("textarea").text(value.event);
         }
       });
     }
@@ -82,11 +79,6 @@ $(function () {
     setTimeout(function(){
       savedMessage.css('color', 'transparent');
     }, 1000 );
-    //
-    // TODO: Add code to get any user input that was saved in localStorage and set
-    // the values of the corresponding textarea elements. HINT: How can the id
-    // attribute of each time-block be used to do this?
-    //
     });
 });
   
